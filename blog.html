@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Zeynep Koz | Ana Sayfa</title>
+    
+    <style>
+        /* Arka plan rengi değiştirme */
+        body {
+            background-color: #1b1b1b;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar stilleri */
+        .topnav {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        /* Navbar linklerinin stilleri */
+        .topnav a {
+            font-family: 'Trebuchet MS', sans-serif;
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Linklerin hover durumunda renk değiştirmesi */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            transition: background-color 0.5s;
+        }
+
+        /* Ana başlık için stil */
+        h1 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 90px;
+            margin-top: 100px;
+        }
+
+        /* Hakkımda kısmı için stil */
+        #hakkımda {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            margin-top: 80px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Her section için stil */
+        section {
+            background-color: #333;
+            margin: 20px auto; /* Yukarıdan ve alttan boşluk */
+            padding: 20px; /* İç boşluk */
+            width: 80%; /* Genişlik ayarı */
+            border-radius: 10px; /* Kenarları yuvarlama */
+        }
+
+        /* h2 kısımları için */
+        h2 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+            margin: 40px;
+        }
+
+        /* Projeler kısmını kutulara ayırma */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 sütunlu bir grid oluştur */
+            gap: 20px; /* Kutular arasındaki boşluk */
+            margin: auto;
+            width: 100%;
+        }
+
+        .project-box {
+            background-color: #181818; /* Kutuların arka plan rengi */
+            color: rgb(211, 211, 211); /* Yazı rengi */
+            padding: 20px; /* İçerik ile kutu kenarları arasındaki boşluk */
+            border-radius: 10px; /* Kenarları yuvarlama */
+            text-align: center;
+        }
+
+        .project-box h3 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .project-box p {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+
+        /* Butonların iletişim için kısmı ile arasındaki uzaklık */
+        .social-container {
+            margin: 5px;
+        }
+
+        .social-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px 50px;
+            border-radius: 20px;
+            margin: 10px;
+            text-decoration: none;
+            font-size: 18px;    
+        }
+
+        /* Aktif olan link için renk */
+        .social-button:hover {
+            background-color: #d3d3d3;
+            color: black;
+            transition: background-color 0.5s;
+        }
+
+        /* İkon ile metin arasındaki boşluk */
+        .social-button i {
+            margin-right: 10px; 
+        }
+
+        #anasayfa {
+            background-image: url('https://r.resimlink.com/QEh2JMV.jpeg'); /* Buraya görselin URL'sini yaz */
+            background-size: cover; /* Görseli tüm ekranı kaplayacak şekilde ayarlar */
+            background-position: center; /* Görseli ortalar */
+            background-attachment: fixed; /* Sayfa kaydırıldığında görsel sabit kalır */
+            color: white; /* Yazı rengini beyaz yapar */
+            padding: 150px 0; /* Üst ve alt boşluk ayarlama */
+        }
+
+        .button {
+            text-align: right; /* Butonu ortalamak için */
+        }
+
+        .button button {
+            background-color: rgb(52, 52, 52); /* Butonun arka plan rengi */
+            border: none; /* Kenarlık yok */
+            padding: 5px 10px; /* İç boşluk */
+            border-radius: 5px; /* Kenar yuvarlama */
+            cursor: pointer; /* İmleç simgesi */
+        }
+
+        .button a {
+            color: rgb(255, 255, 255); /* Yazı rengi */
+            text-decoration: none; /* Altı çizili yok */
+        }
+
+        .button a:hover {
+            background-color: #d3d3d3;
+            color: rgb(0, 0, 0);
+            transition: background-color 0.5s;
+        }
+
+        /* Anket formu */
+        #surveyForm label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #surveyForm input[type="text"], #surveyForm textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        #surveyForm input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #surveyForm input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #surveyForm input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .name{
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        .opinion{
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigasyon Menüsü -->
+    <div class="topnav">
+        <a href="#anasayfa">ANASAYFA</a>
+        <a href="#hakkımda">HAKKIMDA</a>
+        <a href="#projeler">PROJELER</a>
+        <a href="#anket">ANKET</a>
+    </div>
+
+    <!-- Ana Sayfa -->
+    <section id="anasayfa">
+        <h1>Zeynep KOZ</h1>
+        <br>
+        <h3>Bilgisayar Mühendisliği Öğrencisi</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Merhaba, Bu blogda kendimle ilgili bilgilere, projelerime ve bir anket bölümüne ulaşabilirsiniz. İlgilendiğiniz bölümü yukarıdaki menüden seçebilirsiniz.</p>
+        
+        <h2>İletişim için:</h2>
+        <br>
+        <div class="social-container">
+            <a class="social-button" href="https://www.linkedin.com/in/zeynep-koz34/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a class="social-button" href="https://github.com/nepatiess" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a class="social-button" href="https://discord.com/users/467302273911881740" target="_blank">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+            <a class="social-button" href="https://www.instagram.com/nepatiess" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a class="social-button" href="https://www.x.com/nepatiesss" target="_blank">
+                <i class="fab fa-twitter"></i> X
+            </a>
+        </div>
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </section>
+
+    <!-- Hakkında -->
+    <section id="hakkımda">
+        <h2>HAKKIMDA</h2>
+        <h2>---</h2>
+        <br>
+        <p>Merhaba, ben Zeynep Koz. İstanbul'da yaşıyorum. 
+            Düzce Üniversitesi'nde 3. sınıf bilgisayar mühendisliği öğrencisiyim.
+            Oyun programlamaya, yapay zekaya, ve tasarım odaklı yazılım dillerine hakimim.
+            Son zamanlarda makine öğrenmesi alanında çalışıyorum.
+            Resim yapmayı, oyun oynamayı ve yeni şeyler öğrenerek kendimi geliştirmeyi seviyorum.
+        </p>
+    </section>
+
+    <!-- Projeler -->
+    <section id="projeler">
+        <h2>PROJELERİM</h2>
+        <h2>---</h2>
+        <div class="projects-container">
+            <div class="project-box">
+                <h3>OUA Bootcamp 'The Unholy Covenant'</h3>
+                <img src="https://raw.githubusercontent.com/nepatiess/OUA_bootcamp_U-52/main/Bootcamp_52/Assets/ReadMe/oyun.jpeg">
+                <br> <br>
+                <p>Unity ile 3D Korku Oyunu</p>
+                <br> <br> <br> <br>
+                <div class="button">
+                    <button><a href="https://www.linkedin.com/posts/zeynep-koz34_oyunveuygulamaakademisi-bootcamp-trello-activity-7225909329554472960-Kl_v?utm_source=share&utm_medium=member_desktop" target="_blank">Daha Fazlası --></a></button>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>Yapay Zeka</h3>
+                <img src="https://raw.githubusercontent.com/nepatiess/aygaz_yapay_zeka/refs/heads/main/yapay%20zeka1.PNG">
+                <br> <br>
+                <p>CIFAR-10 veri seti üzerinde makine öğrenimi ve derin öğrenme modelleri kullanarak sınıflandırma yapılması ve modellerin performanslarını karşılaştırmaktır.</p>
+                <br>
+                <div class="button">
+                    <button><a href="https://github.com/nepatiess/aygaz_yapay_zeka" target="_blank">Daha Fazlası --></a></button>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>Kütüphane Yönetimi</h3>
+                <img src="https://raw.githubusercontent.com/nepatiess/bookstore_management/refs/heads/main/k%C3%BCt%C3%BCphane.PNG">
+                <br> <br>
+                <p>C++ Programlama Dili Kullanılarak programlanan kütüphane otomasyonu</p>
+                <br> <br> <br> <br> <br> <br> <br> 
+                <div class="button">
+                    <button><a href="https://github.com/nepatiess/bookstore_management" target="_blank">Daha Fazlası --></a></button>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>Game Ideathon</h3>
+                <img src="https://raw.githubusercontent.com/nepatiess/game-ideathon/refs/heads/main/ideathon.jpg">
+                <br> <br>
+                <p>Hikaye odaklı oyunumuz, tek oyunculu bir deneyim için uyarlanmış birinci şahıs (FPS) bakış açısıyla deneyimleniyor.</p>
+                <br> <br>
+                <div class="button">
+                    <button><a href="https://www.canva.com/design/DAF703YE5eE/5b5OCmXrgL9NCvlpwhx69A/edit?utm_content=DAF703YE5eE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Daha Fazlası --></a></button>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>Buz-Ateş-Su</h3>
+                <img src="https://raw.githubusercontent.com/nepatiess/Aygaz_Python_Bootcamp_Tas_Kagit_Makas/refs/heads/main/image_.png">
+                <br> <br>
+                <p>Python tabanlı oyun, Buz, Ateş ve Su unsurlarını kullanarak klasik taş-kâğıt-makas oyununu bir adım öteye taşır.</p>
+                <br> <br> <br> <br>
+                <div class="button">
+                    <button><a href="https://github.com/nepatiess/OUA_bootcamp_U-52" target="_blank">Daha Fazlası --></a></button>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h3>Makine Öğrenmesi</h3>
+                <img src="https://raw.githubusercontent.com/nepatiess/Global_AI-Hub_Machine_Learning/refs/heads/main/image.jpg">
+                <br> <br>
+                <p>Veri Analizi ve Makine Öğrenimi Modelleme Süreçleri</p>
+                <br> <br> <br> <br> <br> <br> <br>
+                <div class="button">
+                    <button><a href="https://github.com/nepatiess/Global_AI-Hub_Machine_Learning" target="_blank">Daha Fazlası --></a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Anket -->
+     <section id="survey">
+        <h2>ANKET</h2>
+        <form>
+            <div class="name">
+                <label for="name">Adınız:</label>
+                <input type="text" id="name" name="name" required><br><br>
+            </div>
+            
+            <div class="opinion">
+                <label for="opinion">Blog hakkındaki düşünceleriniz:</label><br>
+                <textarea id="opinion" name="opinion" rows="10" cols="150" required></textarea><br><br>
+            </div>
+            
+
+            <label>Bloğun en sevdiğiniz kısmı hangisi?</label><br>
+            <input type="radio" id="home" name="favorite" value="Ana Sayfa">
+            <label for="home">Ana Sayfa</label><br>
+            <input type="radio" id="about" name="favorite" value="Hakkında">
+            <label for="about">Hakkında</label><br>
+            <input type="radio" id="projects" name="favorite" value="Projeler">
+            <label for="projects">Projeler</label><br>
+            <input type="radio" id="survey" name="favorite" value="Anket">
+            <label for="survey">Anket</label><br><br>
+
+            <input type="submit" value="Gönder">
+        </form>
+    </section>
+</body>
+</html>
